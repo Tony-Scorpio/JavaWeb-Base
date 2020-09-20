@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+    $(function () {
+        $.get("provinceServlet", {}, function (data) {
+            var option = $('sel');
+            $(data).each(function () {
+                var op = "<option name='"+this.id+"'>" + this.name + "</option>";
+                option.append(op);
+            });
+        });
+    });
+</script>
+<body>
+
+
+    <select id="sel">
+        <option>--请选择省份--</option>
+    </select>
+</body>
+</html>
